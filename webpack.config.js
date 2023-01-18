@@ -58,15 +58,15 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'main',
+      // title: 'main',
       template: './src/index.html',
-      filename: 'index.[hash].html',
+      filename: 'index.html',
       chunks: ['main'],
     }),
     new HtmlWebpackPlugin({
-      title: 'about',
+      // title: 'about',
       template: './src/about.html',
-      filename: 'about.[hash].html',
+      filename: 'about.html',
       chunks: ['about'],
     }),
     new MiniCssExtractPlugin({
