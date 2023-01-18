@@ -14,7 +14,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js',
+    filename: '[name].[hash].js',
     publicPath: '/',
   },
   module: {
@@ -60,10 +60,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'main',
       template: './src/index.html',
+      filename: 'index.[hash].html',
+      chunks: ['main'],
     }),
     new HtmlWebpackPlugin({
       title: 'about',
       template: './src/about.html',
+      filename: 'about.[hash].html',
+      chunks: ['about'],
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
