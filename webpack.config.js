@@ -10,7 +10,6 @@ const production = process.env.NODE_ENV === 'production';
 module.exports = {
   entry: {
     main: './src/index.js',
-    about: './src/about.js',
   },
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -60,14 +59,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       // title: 'main',
       template: './src/index.html',
-      filename: 'index.[hash].html',
+      filename: 'index.html',
       chunks: ['main'],
-    }),
-    new HtmlWebpackPlugin({
-      // title: 'about',
-      template: './src/about.html',
-      filename: 'about.[hash].html',
-      chunks: ['about'],
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
