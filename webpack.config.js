@@ -60,13 +60,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       // title: 'main',
       template: './src/index.html',
-      filename: 'index.html',
+      filename: 'index.[hash].html',
       chunks: ['main'],
     }),
     new HtmlWebpackPlugin({
       // title: 'about',
       template: './src/about.html',
-      filename: 'about.html',
+      filename: 'about.[hash].html',
       chunks: ['about'],
     }),
     new MiniCssExtractPlugin({
