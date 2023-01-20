@@ -8,13 +8,10 @@ const CopyPlugin = require('copy-webpack-plugin');
 const production = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  entry: {
-    main: './src/index.js',
-    about: './src/about.js',
-  },
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: '[name].[hash].js',
+    filename: 'bundle.js',
     publicPath: '/',
   },
   module: {
@@ -60,14 +57,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       // title: 'main',
       template: './src/index.html',
-      filename: 'index.html',
-      chunks: ['main'],
-    }),
-    new HtmlWebpackPlugin({
-      // title: 'about',
-      template: './src/about.html',
-      filename: 'about.html',
-      chunks: ['about'],
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
